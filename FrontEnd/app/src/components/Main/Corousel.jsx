@@ -12,27 +12,9 @@ const Corousel = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const handleIndicatorClick = (index) => {
-        setActiveIndex(index);
-    };
-
     return (
         <div>
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                <ol className="carousel-indicators" style={{ listStyleType: 'none' }}>
-                    <li
-                        onClick={() => handleIndicatorClick(0)}
-                        className={activeIndex === 0 ? "active" : ""}
-                    ></li>
-                    <li
-                        onClick={() => handleIndicatorClick(1)}
-                        className={activeIndex === 1 ? "active" : ""}
-                    ></li>
-                    <li
-                        onClick={() => handleIndicatorClick(2)}
-                        className={activeIndex === 2 ? "active" : ""}
-                    ></li>
-                </ol>
                 <div className="carousel-inner">
                     <div className={`carousel-item ${activeIndex === 0 ? "active" : ""}`}>
                         <img
@@ -45,7 +27,7 @@ const Corousel = () => {
                     <div className={`carousel-item ${activeIndex === 1 ? "active" : ""}`}>
                         <img
                             className="d-block w-100"
-                            src="https://www.desertstreetmeerut.com/image/cache/catalog/slider/gift-1235x400.jpg"
+                            src="https://thegiftstudio.com/cdn/shop/files/Desktop_image_-_Corporate_Banner.jpg?v=1695301383&width=1920"
                             alt="Second slide"
                             height="500px"
                         />
@@ -59,7 +41,6 @@ const Corousel = () => {
                         />
                     </div>
                 </div>
-               
             </div>
         </div>
     );

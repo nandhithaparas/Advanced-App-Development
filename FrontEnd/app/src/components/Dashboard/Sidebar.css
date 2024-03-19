@@ -1,0 +1,41 @@
+.sidebar {
+  width: 250px;
+  background-color: white;
+  padding: 20px;
+  height: calc(100vh - 10px); 
+  border-right: 1px solid #ccc; 
+  position: fixed;
+  top: 6px;
+  bottom: 0;
+  overflow-y: auto; 
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  margin-left: 0px;
+}
+
+
+.user-details {
+  color: black;
+ 
+  
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  padding: 10px 0;
+  color: black;
+  cursor: pointer;
+}
+
+.sidebar-menu li:hover {
+  background-color: black;
+  color: white;
+}

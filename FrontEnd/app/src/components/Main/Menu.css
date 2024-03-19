@@ -1,0 +1,40 @@
+.icon-border{
+    border: 1px solid #dd2745;
+    width: 88%;
+    margin-left: 5.7%;
+    height: 80px;
+    margin-top: 1%;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 15px;
+  }
+  .icon-border-closure {
+    display: flex;
+    justify-content:space-between;
+  }
+  .icon-border1:first-child {
+    border-left: none; /* Remove the left border for the first icon-border1 */
+  }
+  
+  .icon-border1 {
+    
+    margin-top: 5px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 65px;
+    border-left: 1px solid #dd2745;
+    padding-right: 30px; 
+  }
+  
+  .icon-border1 img {
+    padding-left: 13px;
+    height: 45px;
+    width: 45px;
+  }
+  
+  .icon-text {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-left: 8px;
+  }

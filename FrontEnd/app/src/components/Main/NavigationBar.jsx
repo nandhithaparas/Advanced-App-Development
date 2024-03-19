@@ -1,37 +1,39 @@
-import React from 'react';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
-import Login from './Login';
-import Register from './Register';
-
-// function Homes()
-// {
-//   return(
-//    <div>
-//   hii
-//    </div>
-//   )
-// }
+import Menu from './Menu';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function NavigationBar() {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
-    <div className="navbar">
-      <div className="navbar-left">
-        <img width="50" height="50" src="https://asset.brandfetch.io/idHx7ZZZxE/idzzh0l_ji.png" alt="gift" className="logo" />
-        <span>THE GIFT CRAFT</span>
+    <nav>
+      <div className="navbar">
+        <div className="navbar-left">
+          <img width="50" height="50" src="https://asset.brandfetch.io/idHx7ZZZxE/idzzh0l_ji.png" alt="gift" className="logo" />
+          <span>THE GIFT CRAFT</span>
+        </div>
+        <div className="navbar-right">
+          <div className="search-bar">
+            <input type="text" placeholder="Search" />
+          </div>
+          <Link to="/" style={{ textDecoration: 'none' }}><span>Home</span></Link>
+          <span className="menu-dropdown" onClick={toggleMenu}>
+            <span>Menu</span>
+          </span>
+          <Link to="/cart" style={{ textDecoration: 'none' }}><span><ShoppingCartIcon/></span></Link>
+          <span><AccountCircleIcon/></span>
+          <Link to="/" style={{ textDecoration: 'none' }}><span>Login/Signup</span></Link>
+        </div>
       </div>
-      <div className="navbar-right">
-      <div className="search-bar">
-        <input type="text" placeholder="Search" />
-      </div>
-       <Link to="/" style={{textDecoration:'none'}}> <span>Home</span></Link>
-       <Link to="/login" style={{textDecoration:'none'}}> <span>Login</span></Link>
-        <Link to="/register" style={{textDecoration:'none'}}><span>Sign Up</span></Link>
-      </div>
-    </div>
-    
+      {/* Render the menu component below the navigation bar */}
+      {showMenu && <Menu />}
+    </nav>
   )
 }
-
-
-

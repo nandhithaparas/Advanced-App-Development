@@ -17,7 +17,6 @@ export default function Contents() {
         See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
                       to put her plans into play.
       </p>
-     
     </div>
     <div>
       <img src="https://media.istockphoto.com/id/1418167887/photo/happy-friends-giving-christmas-presents-at-home.webp?b=1&s=170667a&w=0&k=20&c=Ck99Yhdpvxjkio9zkoFG5IUh6Q4b6mrbm82e934D374=" alt="" />
@@ -25,8 +24,7 @@ export default function Contents() {
       <p>
         Express yourself powerfully with a thin, light, and elegant design,
         faster performance, battery life.
-      </p>
-     
+      </p> 
     </div>
     <div>
       <img src="https://media.istockphoto.com/id/1419325212/photo/girl-celebrating-fathers-day-greeting-excited-dad-with-box-stock-photo.webp?b=1&s=170667a&w=0&k=20&c=qDwyeHTZuC0GP0LpOE1Dy-GnqhCmjZQt-jyVk1cj5So=" alt="" />
@@ -50,12 +48,11 @@ export default function Contents() {
 
   <section class="xbox">
     <div class="content">
-      <h2>Xbox Game Pass Ultimate</h2>
-      <p>Xbox Game Pass Ultimate Xbox Live Gold and over 100 high-quality
-        console and PC games. Play together with friends and discover your
-        next favorite game.</p>
+      <h2>Wedding Gifting</h2>
+      <p>
+      Celebrate their union with timeless elegance. Explore our curated collection of enchanting gifts, perfect for capturing the essence of their special day. Whether you're a guest or the happy couple, find the perfect expression of love and congratulations at The Gift Studio.</p>
         <a href="#" class="btn">
-          Join Now <i class="fas fa-chevron-right"></i>
+          Enquire Now <i class="fas fa-chevron-right"></i>
         </a>
     </div>
   </section>
@@ -83,7 +80,7 @@ export default function Contents() {
                   </p>  
               </div>
               <div>
-                  <img src="https://media.istockphoto.com/id/1546442230/photo/front-view-skin-care-products-on-wooden-decorative-piece.webp?b=1&s=170667a&w=0&k=20&c=ODFMGn1FLGl-xXAqS-GDEUBmhnqTD9PZ85yhhD2fDnE=" height="220px" alt="" />
+                  <img src="https://media.istockphoto.com/id/1546442230/photo/front-view-skin-care-products-on-wooden-decorative-piece.webp?b=1&s=170667a&w=0&k=20&c=ODFMGn1FLGl-xXAqS-GDEUBmhnqTD9PZ85yhhD2fDnE=" height="230px" alt="" />
                   <h3>Explore Kubernetes</h3>
                   <p>
                       Learn how Kubernetes works and get started with cloud native app
