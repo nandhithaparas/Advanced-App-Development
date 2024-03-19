@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import Menu from './Menu';
+import Menubar from './Menubar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 export default function NavigationBar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -23,17 +34,34 @@ export default function NavigationBar() {
           <div className="search-bar">
             <input type="text" placeholder="Search" />
           </div>
-          <Link to="/" style={{ textDecoration: 'none' }}><span>Home</span></Link>
+          <Link to="/home" style={{ textDecoration: 'none' }}><span>Home</span></Link>
           <span className="menu-dropdown" onClick={toggleMenu}>
             <span>Menu</span>
           </span>
           <Link to="/cart" style={{ textDecoration: 'none' }}><span><ShoppingCartIcon/></span></Link>
-          <span><AccountCircleIcon/></span>
-          <Link to="/" style={{ textDecoration: 'none' }}><span>Login/Signup</span></Link>
+          <span onClick={handleClick}><AccountCircleIcon/></span>
+          <Menu
+            id="account-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>
+              <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>
+                My Profile
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                Login/Signup
+              </Link>
+            </MenuItem>
+          </Menu>
         </div>
       </div>
       {/* Render the menu component below the navigation bar */}
-      {showMenu && <Menu />}
+      {showMenu && <Menubar />}
     </nav>
   )
 }

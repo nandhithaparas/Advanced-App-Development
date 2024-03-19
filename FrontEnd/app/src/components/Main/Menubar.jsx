@@ -1,7 +1,7 @@
 import React from 'react'
 import './Menu.css'
 
-export default function Menu() {
+export default function Menubar() {
   return (
     <div><div className='icon-border'>
     <div className='icon-border-closure'>

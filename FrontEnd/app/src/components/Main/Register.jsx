@@ -1,8 +1,17 @@
 import React from 'react'
 import "./Login.css"
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Register() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/home');
+  };
   return (
     <div className='fulllogin'>
     <div className="login">
@@ -30,7 +39,7 @@ export default function Register() {
           <i className="fa-solid fa-lock"></i>
           <input type="password" placeholder="Confirm Password" />
         </div>
-        <input className="signup-btn" type="submit" value="SIGNUP" />
+        <input className="signup-btn" onClick={handleSubmit} type="submit" value="SIGNUP" />
       </form>
     <p style={{textDecoration:'none'}} > Already Have an account? Login</p>
       

@@ -7,8 +7,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TableVirtuoso } from 'react-virtuoso';
-import NavigationBar from '../Main/NavigationBar';
-import Sidebarr from './Sidebarr';
 
 const sample = [
   ['bag', 159, 6.0, 24, 4.0],
@@ -106,8 +104,6 @@ function rowContent(_index, row) {
 export default function ReactVirtualizedTable() {
   return (
     <>
-    <Sidebarr/>
-    <NavigationBar/>
     <Paper style={{ height: 1000, width: '100%' }}>
       <TableVirtuoso
         data={rows}

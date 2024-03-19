@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Contents.css"
+import { Link } from 'react-router-dom'
 
 export default function Contents() {
   return (
@@ -11,7 +12,7 @@ export default function Contents() {
         </div>
     <section class="home-cards">
     <div>
-      <img src="https://media.istockphoto.com/id/1458422169/photo/happy-young-couple-with-shopping-bags-at-night-in-market.webp?b=1&s=170667a&w=0&k=20&c=VYfBxsczcGzBmKNXxnKG2A4Vji9ZGZq15cp4ozpd7ns=" height="230px" alt=""/>
+     <Link to="/product" ><img src="https://media.istockphoto.com/id/1458422169/photo/happy-young-couple-with-shopping-bags-at-night-in-market.webp?b=1&s=170667a&w=0&k=20&c=VYfBxsczcGzBmKNXxnKG2A4Vji9ZGZq15cp4ozpd7ns=" height="230px" alt=""/></Link> 
       <h3>For Her!</h3>
       <p>
         See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
@@ -19,7 +20,7 @@ export default function Contents() {
       </p>
     </div>
     <div>
-      <img src="https://media.istockphoto.com/id/1418167887/photo/happy-friends-giving-christmas-presents-at-home.webp?b=1&s=170667a&w=0&k=20&c=Ck99Yhdpvxjkio9zkoFG5IUh6Q4b6mrbm82e934D374=" alt="" />
+     <Link to="/product"> <img src="https://media.istockphoto.com/id/1418167887/photo/happy-friends-giving-christmas-presents-at-home.webp?b=1&s=170667a&w=0&k=20&c=Ck99Yhdpvxjkio9zkoFG5IUh6Q4b6mrbm82e934D374=" alt="" /></Link>
       <h3>For Him!</h3>
       <p>
         Express yourself powerfully with a thin, light, and elegant design,

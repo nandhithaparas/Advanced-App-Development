@@ -31,14 +31,14 @@ const ProductPage = () => {
   const [sortBy, setSortBy] = useState('PriceLowToHigh');
   const dispatch=useDispatch();
   const addtoCart = (product) => {
-    // setCart([...cart, product]);
+    //  setCart([...cart, product]);
     dispatch(addToCart({
       id:product.id,
       name:product.name,
       price:product.price,
       image:product.imageUrl
     }));
-
+console.log(id);
   };
 
   const addToWishlist = (product) => {
@@ -144,7 +144,7 @@ const ProductPage = () => {
                     
                       <button
                         className="btn btn-dark"
-                        onClick={() => addtoCart(product)}
+                        onClick={addtoCart}
                       >
                         Add to Cart
                       </button>
