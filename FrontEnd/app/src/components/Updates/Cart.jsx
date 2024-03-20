@@ -9,6 +9,7 @@ import {
 
 } from "../../Redux/features/cartSlice";
 import { useNavigate } from "react-router-dom";
+import NavigationBar from "../Main/NavigationBar";
 
 function Cart() {
   const [totalprice, setPrice] = useState(0);
@@ -66,15 +67,15 @@ function Cart() {
   const nav=useNavigate();
 
   return (
-    <>
-    
+    <div>
+    <NavigationBar/>
       <div className="cart-container">
         {carts.length === 0 ? (
           <div className="no-items">
             <h1>No items in cart</h1>
           </div>
         ) : (
-          <>
+          <div>
             <h1>Your Cart</h1>
             <div className="cart-items">
               <table className="table">
@@ -138,13 +139,13 @@ function Cart() {
               </table>
               <div className="final-bottom">
               <button>Continue Shopping</button>
-              <button onClick={handleCheckout}>Checkout</button>
+              <button>Checkout</button>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

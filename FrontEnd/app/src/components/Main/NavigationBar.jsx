@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './NavBar.css';
 import Menubar from './Menubar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 export default function NavigationBar() {
   const [showMenu, setShowMenu] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const cart = useSelector((state) => state.allCart.carts);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -38,7 +41,13 @@ export default function NavigationBar() {
           <span className="menu-dropdown" onClick={toggleMenu}>
             <span>Menu</span>
           </span>
-          <Link to="/cart" style={{ textDecoration: 'none' }}><span><ShoppingCartIcon/></span></Link>
+          <Link to="/wishlist" style={{ textDecoration: 'none' }}><span><FavoriteBorderOutlinedIcon/></span></Link>
+          <Link to="/cart" style={{ textDecoration: 'none' }}>
+            <span className='cart-box-in'>
+              <ShoppingCartIcon/>
+              {cart.length > 0 && <p className="badge">{cart.length}</p>}
+            </span>
+          </Link>
           <span onClick={handleClick}><AccountCircleIcon/></span>
           <Menu
             id="account-menu"
@@ -55,6 +64,11 @@ export default function NavigationBar() {
             <MenuItem onClick={handleClose}>
               <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
                 Login/Signup
+              </Link>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+              <Link to="/" style={{ textDecoration: 'none', color: 'red' }}>
+                Logout
               </Link>
             </MenuItem>
           </Menu>

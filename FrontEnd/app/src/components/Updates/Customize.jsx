@@ -1,14 +1,14 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react';
+import './Customize.css';
 
-const AddProduct = () => {
+const Customize = () => {
     const [selectedProduct, setSelectedProduct] = useState('');
-    const [selectedDesign, setSelectedDesign] = useState('');
     const [customText, setCustomText] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedFont, setSelectedFont] = useState('');
     const [quantity, setQuantity] = useState(1);
 
-    const handleProduct = () => {
+    const handleAddToCart = () => {
         
     };
 
@@ -23,13 +23,7 @@ const AddProduct = () => {
                       
                     </select>
                 </div>
-                <div className="form-group">
-                    <label>Select Design:</label>
-                    <select value={selectedDesign} onChange={(e) => setSelectedDesign(e.target.value)}>
-                        <option value="">Select</option>
-                       
-                    </select>
-                </div>
+                
                 <div className="form-group">
                     <label>Custom Text:</label>
                     <input type="text" value={customText} onChange={(e) => setCustomText(e.target.value)} />
@@ -55,4 +49,4 @@ const AddProduct = () => {
     );
 }
 
-export default AddProduct;
+export default Customize;

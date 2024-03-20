@@ -38,7 +38,7 @@ const ProductPage = () => {
       price:product.price,
       image:product.imageUrl
     }));
-console.log(id);
+  console.log(product);
   };
 
   const addToWishlist = (product) => {
@@ -132,19 +132,22 @@ console.log(id);
           <div className="col-md-9" style={{ margin:'auto',marginRight:'200px',marginTop:'40px' }}>
             <h2>Products</h2>
             <div className="row row-cols-4" style={{width:'130%'}}>
-              {sortProducts(filterProducts()).map((product) => (
-                <div className="col" key={product.id}>
+            {sortProducts(filterProducts()).map((product) => {
+              const { id, name, category, color, price, imageUrl } = product;
+            
+              return (
+                <div className="col" key={id}>
                   <div className="card mb-4">
-                    <img src={product.imageUrl} className="card-img-top" alt={product.name} />
+                    <img src={imageUrl} className="card-img-top" alt={name} />
                     <div className="card-body">
-                      <h5 className="card-title">{product.name}</h5>
-                      <p className="card-text">Category: {product.category}</p>
-                      <p className="card-text">Color: {product.color}</p>
-                      <p className="card-text">Price: ${product.price}</p>
+                      <h5 className="card-title">{name}</h5>
+                      <p className="card-text">Category: {category}</p>
+                      <p className="card-text">Color: {color}</p>
+                      <p className="card-text">Price: ${price}</p>
                     
                       <button
                         className="btn btn-dark"
-                        onClick={addtoCart}
+                        onClick={() => addtoCart(product)}
                       >
                         Add to Cart
                       </button>
@@ -157,7 +160,8 @@ console.log(id);
                     </div>
                   </div>
                 </div>
-              ))}
+              );
+            })}
             </div>
           </div>
         </div>
