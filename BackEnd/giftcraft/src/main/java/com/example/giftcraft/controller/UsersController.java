@@ -37,7 +37,7 @@ public class UsersController {
     public Optional<Users> findByUsername(@PathVariable String email) {
     	return usersService.findByUsername(email);
     }
-    @PostMapping
+    @PostMapping("/post")
     public Users createUser(@RequestBody Users user) {
         return usersService.createUser(user);
     }

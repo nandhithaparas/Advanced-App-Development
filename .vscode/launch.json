@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GiftcraftApplication<giftcraft>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.giftcraft.GiftcraftApplication",
+            "projectName": "giftcraft",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
