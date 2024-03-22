@@ -23,10 +23,11 @@ export default function Register() {
       </div>
     
       <form>
+        
         <div className="input">
-          <i className="fa-solid fa-user"></i>
-          <input type="text"  placeholder="Name" />
-        </div>
+        <i className="fa-solid fa-user"></i>
+        <input type="text"  placeholder="Name" />
+      </div>
         <div className="input">
         <i className="fa-solid fa-envelope"></i>
         <input type="email"  placeholder="Email" />
