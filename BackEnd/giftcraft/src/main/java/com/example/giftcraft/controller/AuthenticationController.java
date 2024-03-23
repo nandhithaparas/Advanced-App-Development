@@ -1,42 +1,48 @@
 package com.example.giftcraft.controller;
 
+import com.example.giftcraft.dto.Request.AuthenticationRequest;
+import com.example.giftcraft.dto.Request.RegisterRequest;
+import com.example.giftcraft.dto.Response.AuthenticationResponse;
+import com.example.giftcraft.entity.UserRegister;
+import com.example.giftcraft.repository.UserRegitserRepository;
+import com.example.giftcraft.service.AuthenticationService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.giftcraft.dto.LoginRequest;
-import com.example.giftcraft.service.JwtService;
+import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/auth")	
+@RequiredArgsConstructor
 public class AuthenticationController {
-
     @Autowired
-    private JwtService jwtService;
+	private UserRegitserRepository userrepo;
+	private final AuthenticationService service;
+	@PostMapping("/register")
+	 public ResponseEntity<String> register(
+		      @RequestBody RegisterRequest request
+		  ) {
+		service.register(request);
+		    return ResponseEntity.ok("Registered Successfully");
+		  }
+	@GetMapping("/getregister")
+	public List<UserRegister> getregister()
+	{
+		return userrepo.findAll();
+		
+	}
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @GetMapping("/home")
-    public String Home() {
-        return "Initial Render Page.!";
-    }
-
-    @PostMapping("/authenticate")
-    public String authenticateAndGetToken(@RequestBody LoginRequest authRequest) {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
-        if (authentication.isAuthenticated()) {
-            return jwtService.generateToken(authRequest.getEmail());
-        } else {
-            throw new UsernameNotFoundException("Invalid user request!");
-        }
-    }
+		  @PostMapping("/authentication")
+		  public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request)
+		  {
+			return ResponseEntity.ok(service.authenticate(request));
+			  
+		  }
 }
