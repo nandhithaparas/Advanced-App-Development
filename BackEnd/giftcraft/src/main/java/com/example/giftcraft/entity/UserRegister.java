@@ -1,11 +1,5 @@
 package com.example.giftcraft.entity;
 
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails; // Make sure this import is correct
 
 import com.example.giftcraft.entity.enumerate.Role;
 
@@ -21,58 +15,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@Builder
 @Entity
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@Table(name = "users")
-public class UserRegister implements UserDetails {
-
-    @Id
+@NoArgsConstructor
+@Builder
+@Table(name = "_user")
+public class UserRegister  {
+      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userRegId;
+    private Long userid;
     private String username;
     private String emailid;
     private String password;
-
+    private String mobileno;
     @Enumerated(EnumType.STRING)
-    private Role role;
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return List.of(new SimpleGrantedAuthority(role.name()));
-	}
+    private Role roles;
 
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return password;
-	}
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return username;
-	}
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return true;
-	}
 
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return true;
-	}
 }
-

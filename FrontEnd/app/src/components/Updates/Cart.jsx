@@ -8,7 +8,7 @@ import {
   removeToCart,
 
 } from "../../Redux/features/cartSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavigationBar from "../Main/NavigationBar";
 
 function Cart() {
@@ -85,6 +85,7 @@ function Cart() {
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    <th>Edit</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -118,6 +119,12 @@ function Cart() {
                       </td>
                       <td>&#8377; {item.qnty * item.price}</td>
                       <td>
+                     <Link to="/cus" style={{textDecoration:"none"}}><button
+                        className="button-edit">
+                        Edit
+                      </button></Link> 
+                    </td>
+                      <td>
                         <button
                           className="button-remove"
                           onClick={() => handleDecrement(item.id)}
@@ -128,7 +135,7 @@ function Cart() {
                       </tr>
                       ))}
                       <tr className="total1">
-                      <td colSpan="5">
+                      <td colSpan="6">
                       <div className="total">
                         <h3>Items In Cart: {totalquantity}</h3>
                         <h3>Total Price: &#8377; {totalprice}</h3>

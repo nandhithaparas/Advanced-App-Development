@@ -51,6 +51,14 @@
     margin: 0 5px;
   }
   
+  .button-edit {
+    background-color: rgb(38, 100, 121);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
   .button-remove {
     background-color: rgb(121, 38, 38);
     color: white;

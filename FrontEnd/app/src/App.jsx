@@ -5,7 +5,6 @@ import HomePage from './components/Main/HomePage'
 import Products from './components/Main/Products'
 import Profile from './components/Dashboard/Profile'
 import Cart from './components/Updates/Cart'
-import ReactVirtualizedTable from './components/Dashboard/Table'
 import Customize from './components/Updates/Customize'
 import NavigationBar from './components/Main/NavigationBar'
 
